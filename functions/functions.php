@@ -45,7 +45,7 @@ function insert($data) {
 
 function delete($id){
   global $conn;
-  $qry = "DELETE FROM tugas6pweb WHERE nrp =" . $id;
+  $qry = "DELETE FROM tugas6pweb WHERE nrp = '" . $id . "'";
   $res = pg_query($conn,$qry);
   return pg_affected_rows($res);
 }
