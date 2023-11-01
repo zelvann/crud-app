@@ -39,8 +39,8 @@ if($uri[2] == '' || $uri[2] == 'index.php') {
                 <td><?= $mining['asal'] ?></td>
                 <td><?= $mining['mining_at'] ?></td>
                 <td>
-                  <a href="update.php?id=<?= $mining['nrp'] ?>" class="btn btn-primary shadow"><img src="icon/pencil.svg" width="20"></a>
-                  <a href="delete.php?id=<?= $mining['nrp'] ?>" class="btn btn-danger shadow" onclick="return confirm('Data akan terhapus')"><img src="icon/trash.svg" width="20"></a>
+                  <a href="update.php?nrp=<?= $mining['nrp'] ?>" class="btn btn-primary shadow"><img src="icon/pencil.svg" width="20"></a>
+                  <a href="delete.php?nrp=<?= $mining['nrp'] ?>" class="btn btn-danger shadow" onclick="return confirm('Data akan terhapus')"><img src="icon/trash.svg" width="20"></a>
                 </td>
               </tr>
               <?php endforeach; ?>
