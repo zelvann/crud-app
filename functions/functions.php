@@ -17,7 +17,7 @@ function All($tbname) {
 
 function byNRP($id) {
   global $conn;
-  $qry = "SELECT * FROM tugas6pweb WHERE nrp = " . $id;
+  $qry = "SELECT * FROM tugas6pweb WHERE nrp = '$id'";
   $res = pg_query($conn,$qry);
 
   if(!$res) {
@@ -45,7 +45,25 @@ function insert($data) {
 
 function delete($id){
   global $conn;
-  $qry = "DELETE FROM tugas6pweb WHERE nrp = '" . $id . "'";
+  $qry = "DELETE FROM tugas6pweb WHERE nrp = '$id'";
   $res = pg_query($conn,$qry);
   return pg_affected_rows($res);
 }
+
+function update($data) {
+  global $conn;
+  $nname = $data['nama'];
+  $dnrp = $data['nrp'];
+  $ndpt = $data['departemen'];
+  $nasal = $data['asal'];
+  $ntanggal = $data['tanggal'];
+  $qry = "UPDATE tugas6pweb SET 
+          nama = '$nname',
+          departemen = '$ndpt',
+          asal = '$nasal',
+          mining_at = '$ntanggal'
+          WHERE nrp = '$dnrp'";
+  $res = pg_query($conn,$qry);
+  return pg_affected_rows($res);      
+}
+?>

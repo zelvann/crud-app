@@ -7,7 +7,7 @@ require 'includes/header.php';
     <div class="col col-4 mx-auto">
       <div class="card shadow">
         <div class="card-header">
-          <h4>Form Pendaftaran</h4>
+          <h4 class="text-center">Form Pendaftaran</h4>
         </div>
         <div class="card-body">
           <form action="process-form.php" method="post">
